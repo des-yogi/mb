@@ -15,13 +15,51 @@
     <div class="page__content">
       @@include('blocks/page-header/page-header.html')
 
-      <main>
+      <main class="main-content">
 
-        <div class="container">
+        @@include('blocks/hero/hero.html')
+
+        @@include('blocks/service-list/service-list.html')
+
+        <section class="container  indent-content">
+
+          <div class="row  indent-content__header">
+
+            <div class="indent-content__title-col">
+              <h2 class="indent-content__title  double-slash">Блог</h2>
+            </div>
+
+            <!-- Опциональный Блок (может отсутствовать) -->
+            <!-- <div class="indent-content__add-col">
+              <button class="btn">Кнопка</button>
+            </div> -->
+
+          </div>
+
+          <div class="row  indent-content__main">
+            <div class="indent-content__main-col">
+              @@include('blocks/blog-card-ext/blog-card-ext.html', {
+                "img": "blog-img",
+                "title": 'Гештальт-подход. 10 принципов, способных изменить жизнь',
+                "text": 'Нет времени на чтение сложных книг, курсы психологии, а хочется, чтобы жизнь изменилась к лучшему «здесь и сейчас»? Гештальт терапия – не волшебная палочка, но может…'
+              })
+
+              @@include('blocks/blog-card-ext/blog-card-ext.html', {
+                "img": "blog-img",
+                "title": 'Как избавиться от одиночества',
+                "text": 'Одиночество в толпе – крылатая фраза, живущая в мегаполисе. Одиночество в сети – известный роман Януша Вишневского. 100 лет одиночества – намного более масштабный и известный роман Габриэля Гарсия Маркеса. И тысячи запросов в интернете: как избавить.'
+              })
+
+              @@include('blocks/blog-card-ext/blog-card-ext.html', {
+                "img": "blog-img",
+                "title": 'Как изменить свою жизнь',
+                "text": 'Как стать лучшей версией себя, как изменить свою жизнь к лучшему и как постоянно развиваться – это едва ли не основные запросы общества сегодня. Все хотят меняться. Хорошо бы – меняться в правильную сторону. Не меняться, жить по привычке и никуда не двигаться – едва ли не преступ…'
+              })
+            </div>
+          </div>
 
 
-
-        </div>
+        </section>
 
       </main>
 

@@ -1,0 +1,63 @@
+.blog-card-ext {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &:nth-child(odd) {
+
+    #{$block-name}__img-col {
+
+      @media (min-width: $screen-md) {
+        order: 1;
+      }
+    }
+  }
+
+  &__inner {
+    gap: 24px 0;
+  }
+
+  &__img-col {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(lg, 4);
+    //@include col(xl, 4);
+  }
+
+  &__text-col {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(lg, 8);
+    //@include col(xl, 8);
+  }
+
+  &__img {
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      border-radius: $border-radius;
+    }
+  }
+
+  &__text {
+    height: 100%;
+    padding: 40px 16px;
+    background-color: $block-bg;
+    border-radius: $border-radius;
+
+    @media (min-width: $screen-xl) {
+      padding: 40px;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    color: $main-color;
+  }
+
+  &__descr {
+    margin-bottom: 32px;
+  }
+}

@@ -1,5 +1,7 @@
 {
   "blocks": {
+    "typo": [],
+    "page": [],
     "breadcrumbs": [],
     "btn": [],
     "burger": [],
@@ -14,7 +16,6 @@
     "lang-switcher": [],
     "logo": [],
     "main-nav": [],
-    "page": [],
     "page-footer": [],
     "page-header": [],
     "pagination": [],
@@ -23,7 +24,18 @@
     "table": [],
     "table-mobile-scroll": [],
     "to-top": [],
-    "typo": []
+    "indent-content": [],
+    "hero": [],
+    "service-list": [],
+    "blog-card-ext": [],
+    "blog-card": [],
+    "quote-box": [],
+    "review-card": [],
+    "social-links": [],
+    "copyrights": [],
+    "contacts": [],
+    "error-404": [],
+    "tag-links": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",

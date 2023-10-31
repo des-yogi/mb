@@ -1,0 +1,48 @@
+<!--DEV
+@ @include('blocks/service-list/service-list.html')
+-->
+
+<section class="container  service-list">
+  <h2 class="visually-hidden">Направления в работе</h2>
+
+  <div class="service-list__inner">
+
+    <div class="service-list__img">
+      <picture>
+        <source srcset="img/service-hands.webp" media="(min-width: 1024px)" type="image/webp">
+        <source srcset="img/service-hands.jpg" media="(min-width: 1024px)">
+          <!-- 688x420px -->
+        <source srcset="img/service-hands.webp" media="(min-width: 768px)" type="image/webp">
+        <source srcset="img/service-hands.jpg" media="(min-width: 768px)">
+          <!-- 943x576px -->
+        <source srcset="img/service-hands.webp" media="(min-width: 480px)" type="image/webp">
+        <source srcset="img/service-hands.jpg" media="(min-width: 480px)">
+          <!-- 688x420px -->
+        <source srcset="img/service-hands.webp" media="(min-width: 360px)" type="image/webp">
+        <source srcset="img/service-hands.jpg" media="(min-width: 360px)">
+          <!-- 456x278px -->
+        <img src="img/service-hands.jpg" alt="" width="" height="" loading="lazy">
+      </picture>
+    </div>
+
+    <div class="service-list__text">
+      <p class="h3  service-list__subtitle">Работаю с запросами:</p>
+
+      <ul class="list-nostyled  service-list__list">
+        <li class="service-list__item">
+          Отношения в паре
+        </li>
+        <li class="service-list__item">
+          Семья
+        </li>
+        <li class="service-list__item">
+          Самооценка, любовь к себе
+        </li>
+        <li class="service-list__item">
+          Воспитание детей
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
