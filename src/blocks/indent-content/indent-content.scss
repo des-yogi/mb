@@ -1,0 +1,46 @@
+.indent-content {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title-col {
+    @include col(xs, 12);
+    @include col(md, 7);
+    @include col(xl, 3);
+  }
+
+  &__add-col {
+    @include col(xs, 12);
+    @include col(md, 5);
+    @include col(xl, 9);
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__main-col {
+    @include col(xs, 12);
+    @include col-offset(xl, 3);
+    @include col(xl, 9);
+    display: flex;
+    flex-direction: column;
+    gap: 24px 0;
+  }
+
+  &__header {
+    align-items: center;
+    gap: 48px 0;
+    margin-bottom: 48px;
+  }
+
+  &__main {
+    gap: 48px 0;
+  }
+
+  &__title {
+    margin: 0;
+  }
+}

@@ -1,11 +1,13 @@
 <!--DEV
-
-Нужно убрать пробел между @-ами:
-
 @ @include('blocks/page-header/page-header.html')
-
 -->
 
-<header class="page-header" role="banner">
-  page-header
-</header>
+<header class="container  page-header">
+  <div class="page-header__inner">
+    @@include('../../blocks/logo/logo.html')
+
+    @@include('../../blocks/lang-switcher/lang-switcher.html')
+
+    @@include('../../blocks/main-nav/main-nav.html')
+  </div>
+  </header>

@@ -1,37 +1,43 @@
-// В этом файле должны быть стили для БЭМ-блока main-nav, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
-$gray-lightest:               hsl(0, 0%, 90%) !default;
-
-$screen-xs:                   0 !default;
-$screen-sm:                   480px !default;
-$screen-md:                   768px !default;
-$screen-lg:                   992px !default;
-$screen-xl:                   1200px !default;
-$screen-xxl:                  1800px !default;
-
-$menu-desktop-width:          $screen-xl !default;
-$toggler-part-height:         3px !default;
-$toggler-part-bg-color:       #000 !default;
-
-$transition-time:             0.3s !default;
-
 .main-nav {
 
   $block-name:                &; // #{$block-name}__element
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  z-index: 10;
+  // z-index: 10;
+  width: 100%;
+
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 23px;
+    width: calc(50% - 24px - 48px);
+    height: 1px;
+    background-color: $brand-light;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
 
   // первый уровень
   &__list {
     margin: 0;
     padding: 0;
     list-style: none;
+    background-color: $white;
 
     // мобильный вид списка
-    @media (max-width: ($menu-desktop-width - 1)) {
+    @media (max-width: $screen-md - 1) {
 
       // открытие/закрытие меню только в случае работающего JS
 
@@ -48,106 +54,83 @@ $transition-time:             0.3s !default;
     }
 
     // настольный вид списка
-    @media (min-width: $menu-desktop-width) {
+    @media (min-width: $screen-md) {
       display: flex;
       flex-wrap: wrap;
+      padding: 0 44px;
     }
   }
 
   &__item {
+    display: flex;
+    justify-content: center;
     position: relative;
 
-    &--active {
+    & + & {
+
+      @media (min-width: $screen-md) {
+        margin-left: 24px;
+      }
+    }
+
+    &.active {
 
       & > #{$block-name}__link {
-        color: red;
+        color: $link-color;
+
+        &::after {
+          display: block;
+          content: "";
+          position: absolute;
+          bottom: 9px;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $link-color;
+        }
       }
     }
   }
 
   &__link {
-    display: block;
-    padding: 0.5em;
-    text-decoration: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding: 10px 4px;
+    font-size: 20px;
+    text-decoration: none !important;
+    text-align: center;
+    text-transform: uppercase;
+    color: inherit;
     background-color: #fff;
+    transition: all $transition-time;
+
 
     &:hover,
     &:focus {
-      text-decoration: none;
-      background-color: aquamarine;
-    }
 
-    &--lvl-2 {
-
-      @media (max-width: ($menu-desktop-width - 1)) {
-        padding-left: 1.2em;
-      }
-    }
-
-    &--lvl-3 {
-
-      @media (max-width: ($menu-desktop-width - 1)) {
-        padding-left: 2.4em;
-      }
-    }
-  }
-
-  &__sublist-wrapper {
-
-    &--lvl-2 {
-
-      @media (min-width: $menu-desktop-width) {
+      &::after {
+        display: block;
+        content: "";
         position: absolute;
-        top: 100%;
+        bottom: 9px;
         left: 0;
-        z-index: 1;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
-
-        // stylelint-disable  max-nesting-depth
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
-        // stylelint-enable
-      }
-    }
-
-    &--lvl-3 {
-
-      @media (min-width: $menu-desktop-width) {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 100%;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity $transition-time;
-
-        // stylelint-disable  max-nesting-depth
-        #{$block-name}__item--show-child > &,
-        #{$block-name}__item--lvl-2:hover & {
-          opacity: 1;
-          height: auto;
-          overflow: visible;
-        }
-        // stylelint-enable
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $link-color;
       }
     }
   }
-
 
 
   // переключатель
 
   &__toggler {
-    display: inline-block;
+    //display: inline-flex;
     padding: 0;
+    margin-bottom: 30px;
     background: none;
     border: none;
 
@@ -155,7 +138,7 @@ $transition-time:             0.3s !default;
       display: none;
     }
 
-    @media (min-width: $menu-desktop-width) {
+    @media (min-width: $screen-md) {
       display: none;
     }
   }

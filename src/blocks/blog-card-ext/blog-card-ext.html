@@ -1,0 +1,32 @@
+<!--DEV
+@ @include('blocks/blog-card-ext/blog-card-ext.html', {
+  "img": "blog-img",
+  "title": 'Гештальт-подход. 10 принципов, способных изменить жизнь',
+  "text": 'Нет времени на чтение сложных книг, курсы психологии, а хочется, чтобы жизнь изменилась к лучшему «здесь и сейчас»? Гештальт терапия – не волшебная палочка, но может…'
+})
+-->
+
+<article class="blog-card-ext">
+  <div class="row  blog-card-ext__inner">
+
+    <div class="blog-card-ext__img-col">
+      <div class="embed-responsive embed-responsive--3-4  blog-card-ext__img">
+        <picture>
+          <source srcset="img/@@img.webp" media="(min-width: 360px)" type="image/webp">
+          <source srcset="img/@@img.jpg" media="(min-width: 360px)">
+
+          <img src="img/@@img.jpg" alt="Alt text" width="" height="" loading="lazy ">
+        </picture>
+      </div>
+    </div>
+
+    <div class="blog-card-ext__text-col">
+      <div class="blog-card-ext__text">
+        <h3 class="blog-card-ext__title">@@title</h3>
+        <p class="blog-card-ext__descr">@@text</p>
+        <a href="#" class="btn btn--small">Подробнее</a>
+      </div>
+    </div>
+
+  </div>
+</article>

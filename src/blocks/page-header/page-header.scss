@@ -1,8 +1,39 @@
-// В этом файле должны быть стили для БЭМ-блока page-header, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .page-header {
+  padding-top: 24px;
+  padding-bottom: 40px;
+
+  @media (min-width: $screen-md) {
+    padding-bottom: 52px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding-top: 70px;
+  }
 
   $block-name:                &; // #{$block-name}__element
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px 0;
+
+    @media (min-width: $screen-md) {
+      gap: 70px 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      flex-wrap: wrap;
+      flex-direction: initial;
+      justify-content: center;
+    }
+
+    .logo {
+
+      @media (min-width: $screen-xl) {
+        margin-left: auto;
+        transform: translateX(85px);
+      }
+    }
+  }
 }
