@@ -12,10 +12,22 @@
     <div class="blog-card-ext__img-col">
       <div class="embed-responsive embed-responsive--3-4  blog-card-ext__img">
         <picture>
+          <source srcset="img/@@img.webp" media="(min-width: 1280px)" type="image/webp">
+          <source srcset="img/@@img.jpg" media="(min-width: 1280px)">
+            <!-- 282x386 -->
+          <source srcset="img/@@img.webp" media="(min-width: 1024px)" type="image/webp">
+          <source srcset="img/@@img.jpg" media="(min-width: 1024px)">
+            <!-- 384x512 -->
+          <source srcset="img/@@img.webp" media="(min-width: 768px)" type="image/webp">
+          <source srcset="img/@@img.jpg" media="(min-width: 768px)">
+            <!-- 460x613 -->
+          <source srcset="img/@@img.webp" media="(min-width: 480px)" type="image/webp">
+          <source srcset="img/@@img.jpg" media="(min-width: 480px)">
+            <!-- 740x987 -->
           <source srcset="img/@@img.webp" media="(min-width: 360px)" type="image/webp">
           <source srcset="img/@@img.jpg" media="(min-width: 360px)">
-
-          <img src="img/@@img.jpg" alt="Alt text" width="" height="" loading="lazy ">
+            <!-- 456x608 -->
+          <img src="img/@@img.jpg" alt="Alt text" width="1200" height="1600" loading="lazy">
         </picture>
       </div>
     </div>

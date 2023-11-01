@@ -1,9 +1,29 @@
-// В этом файле должны быть стили для БЭМ-блока social-links, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .social-links {
 
   $block-name:                &; // #{$block-name}__element
 
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: inherit;
+
+    &:active {
+      color: $text-color;
+    }
+  }
+
+  &__title {
+    margin: 16px 0 0;
+    text-align: center;
+  }
 }

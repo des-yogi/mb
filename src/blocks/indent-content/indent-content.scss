@@ -8,12 +8,14 @@
     @include col(xs, 12);
     @include col(md, 7);
     @include col(xl, 3);
+    margin-bottom: 48px;
   }
 
   &__add-col {
     @include col(xs, 12);
     @include col(md, 5);
     @include col(xl, 9);
+    margin-bottom: 48px;
 
     @media (min-width: $screen-md) {
       display: flex;
@@ -32,8 +34,6 @@
 
   &__header {
     align-items: center;
-    gap: 48px 0;
-    margin-bottom: 48px;
   }
 
   &__main {

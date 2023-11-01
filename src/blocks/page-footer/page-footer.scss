@@ -1,8 +1,118 @@
-// В этом файле должны быть стили для БЭМ-блока page-footer, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .page-footer {
 
   $block-name:                &; // #{$block-name}__element
+
+  .social-links {
+
+    @media (min-width: $screen-xl) {
+      height: 100%;
+      border-left: 1px solid $main-color;
+      border-right: 1px solid $main-color;
+    }
+  }
+
+  &__main {
+    padding-top: 70px;
+    padding-bottom: 48px;
+    background-color: $block-bg;
+  }
+
+  &__main-col {
+    @include col-offset(xs, 2);
+    @include col(xs, 8);
+    @include col-offset(md, 0);
+    @include col(md, 4);
+
+    & + & {
+
+      @media (max-width: $screen-md - 1) {
+        padding-top: 48px;
+        margin-top: 48px;
+        border-top: 1px solid $main-color;
+      }
+    }
+
+    &--contacts {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__nav-list {
+    text-align: center;
+  }
+
+  &__nav-item {
+
+    & + & {
+      margin-top: 8px;
+    }
+  }
+
+  &__nav-link {
+    display: inline-block;
+    vertical-align: top;
+    padding: 4px 8px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:active {
+      color: $text-color;
+    }
+  }
+
+  &__caption {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: inherit;
+  }
+
+  &__contacts {
+    text-align: center;
+
+    @media (min-width: $screen-md) {
+      text-align: inherit;
+    }
+  }
+
+  &__contacts-list {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $screen-md) {
+      align-items: flex-start;
+    }
+  }
+
+  &__contacts-item {
+
+    & + & {
+      margin-top: 4px;
+    }
+  }
+
+  &__contacts-link {
+    display: inline-block;
+    vertical-align: top;
+    padding: 4px 0;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:active {
+      color: $text-color;
+    }
+  }
+
+  &__copyrights {
+    background-color: $brand-light;
+  }
 }
