@@ -1,14 +1,25 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
-@ @include('blocks/review-card/review-card.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
-<div class="review-card">content</div>
-
+@ @include('blocks/review-card/review-card.html', {
+  "avatar": "user-avatar",
+  "name": "Анна",
+  "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+})
 -->
+
+<article class="review-card">
+
+  <div class="embed-responsive embed-responsive--1-1  review-card__img">
+    <picture>
+      <source srcset="img/@@avatar.webp" type="image/webp">
+      <img src="img/@@avatar.jpg" alt="Avatar name" width="120" height="120" loading="lazy">
+    </picture>
+  </div>
+
+  <div class="review-card__text">
+    <h3 class="review-card__title">@@name</h3>
+    <div class="review-card__descr">
+      <p>@@text</p>
+    </div>
+  </div>
+
+</article>

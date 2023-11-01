@@ -29,10 +29,9 @@
               <h2 class="indent-content__title  double-slash">Блог</h2>
             </div>
 
-            <!-- Опциональный Блок (может отсутствовать) -->
-            <!-- <div class="indent-content__add-col">
-              <button class="btn">Кнопка</button>
-            </div> -->
+            <div class="indent-content__add-col">
+              <a href="#" class="btn">Все записи блога</a>
+            </div>
 
           </div>
 
@@ -58,6 +57,58 @@
             </div>
           </div>
 
+        </section>
+
+        @@include('blocks/quote-box/quote-box.html')
+
+        <section class="container  indent-content">
+
+          <div class="row  indent-content__header">
+
+            <div class="indent-content__title-col">
+              <h2 class="indent-content__title  double-slash">Отзывы</h2>
+            </div>
+
+            <div class="indent-content__add-col">
+              <button class="btn  btn--small">
+                <span>Оставить отзыв</span>
+                <svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#chevron-right"></use></svg>
+              </button>
+            </div>
+
+          </div>
+
+          <div class="row  indent-content__main">
+            <div class="indent-content__main-col">
+              <div class="row  review-card__wrapper">
+
+                <div class="col-1-2-3">
+                  @@include('blocks/review-card/review-card.html', {
+                    "avatar": "user-avatar",
+                    "name": "Анна",
+                    "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+                  })
+                </div>
+
+                <div class="col-1-2-3">
+                  @@include('blocks/review-card/review-card.html', {
+                    "avatar": "user-avatar",
+                    "name": "Василиса",
+                    "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Рекомендую!'
+                  })
+                </div>
+
+                <div class="col-1-2-3">
+                  @@include('blocks/review-card/review-card.html', {
+                    "avatar": "user-avatar",
+                    "name": "Глафира",
+                    "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+                  })
+                </div>
+
+              </div>
+            </div>
+          </div>
 
         </section>
 

@@ -1,9 +1,72 @@
-// В этом файле должны быть стили для БЭМ-блока quote-box, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .quote-box {
 
   $block-name:                &; // #{$block-name}__element
 
+  hr {
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    min-height: 250px;
+    //border-radius: $border-radius;
+    background-color: $block-bg;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: image-set(
+      "/img/quote-bg-mob.webp" type("image/webp"),
+      "/img/quote-bg-mob.jpg" type("image/jpg")
+    );
+
+    @media (min-width: $screen-md) {
+
+      background-image: image-set(
+        "/img/quote-bg.webp" type("image/webp"),
+        "/img/quote-bg.jpg" type("image/jpg")
+      );
+    }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    //flex-direction: column;
+    margin: 0;
+    padding: 48px 24px;
+
+    @media (min-width: $screen-md) {
+      padding: 48px 80px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 48px 200px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 48px 300px;
+    }
+  }
+
+  &__text {
+    flex: 1 0 100%;
+    margin-bottom: 16px;
+    font-family: $font-family--display, serif;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.7;
+
+    @media (min-width: $screen-md) {
+      font-size: 28px;
+      text-align: inherit;
+    }
+  }
+
+  &__signature {
+    flex: 1 0 100%;
+    margin-top: 8px;
+    text-align: right;
+  }
 }

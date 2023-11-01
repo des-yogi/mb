@@ -1,11 +1,56 @@
 <!--DEV
-
-Нужно убрать пробел между @-ами:
-
 @ @include('blocks/page-footer/page-footer.html')
-
 -->
 
-<footer class="page-footer" role="contentinfo">
-  page-footer
+<footer class="page-footer">
+
+  <div class="container  page-footer__main">
+    <div class="row">
+
+      <div class="page-footer__main-col">
+        <nav class="page-footer__nav">
+          <ul class="list-nostyled  page-footer__nav-list">
+            <li class="page-footer__nav-item  active">
+              <a class="page-footer__nav-link  page-footer__caption">Обо мне</a>
+            </li>
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link  page-footer__caption">Отзывы</a>
+            </li>
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link  page-footer__caption">Блог</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="page-footer__main-col">
+        @@include('../../blocks/social-links/social-links.html')
+      </div>
+
+      <div class="page-footer__main-col  page-footer__main-col--contacts">
+        <section class="page-footer__contacts">
+          <h3 class="page-footer__caption" style="margin: 0 0 12px;">Контакты</h3>
+          <ul class="list-nostyled  page-footer__contacts-list">
+            <li class="page-footer__contacts-item">
+              <a href="tel:+7049899340" class="page-footer__contacts-link">
+                (704) 989-93-40
+              </a>
+            </li>
+            <li class="page-footer__contacts-item">
+              <a href="mailto:marinabelaeva@icloud.com" class="page-footer__contacts-link">
+                marinabelaeva@icloud.com
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container  page-footer__copyrights">
+    @@include('../../blocks/copyrights/copyrights.html')
+  </div>
+
+  @@include('../../blocks/to-top/to-top.html')
 </footer>
