@@ -278,7 +278,7 @@ a {
 * {
   //Firefox only
   /* «цвет ползунка» «цвет полосы скроллбара» */
-  scrollbar-color: $divider-color;
+  scrollbar-color: $brand-light;
   scrollbar-width: thin;  /* толщина */
 
   //for webkit browsers (Chrome, Opera, Safary, Edge ets.)
@@ -295,12 +295,12 @@ a {
   ::-webkit-scrollbar {
       width: 6px; /* ширина для вертикального скролла */
       height: 6px; /* высота для горизонтального скролла */
-      background-color: $divider-color;
+      background-color: $gray-lightest;
   }
 
   /* ползунок скроллбара */
   ::-webkit-scrollbar-thumb {
-    background-color: $main-color;
+    background-color: $gray-lighten;
     border-radius: 8px;
     box-shadow: none;
     //box-shadow: inset 1px 1px 10px #f3faf7;
@@ -317,17 +317,6 @@ a {
   &::-webkit-scrollbar {
     display: none;
   }
-}
-
-.main-content {
-
-  // & > * {
-  //   margin: 70px 0;
-
-  //   &:first-child {
-  //     margin-top: 0;
-  //   }
-  // }
 }
 
 .double-slash {
@@ -347,6 +336,25 @@ a {
   @include col(xs, 12);
   @include col(md, 6);
   @include col(xl, 4);
+}
+
+.publishedon {
+  display: inline-flex;
+
+  &::before {
+    display: block;
+    content: "";
+    //position: absolute;
+    //top: 50%;
+    //left: 0;
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position: center;
+    background-image: svg-load('../blocks/sprite-svg/svg/calendar.svg', fill=$text-color);
+  }
 }
 
 // background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);

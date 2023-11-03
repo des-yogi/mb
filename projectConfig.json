@@ -35,7 +35,8 @@
     "copyrights": [],
     "contacts": [],
     "error-404": [],
-    "tag-links": []
+    "tag-links": [],
+    "top-heading": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
