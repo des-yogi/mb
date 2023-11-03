@@ -1,9 +1,35 @@
-// В этом файле должны быть стили для БЭМ-блока tag-links, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .tag-links {
 
   $block-name:                &; // #{$block-name}__element
 
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 18px;
+  text-align: center;
+  text-decoration: none !important;
+  color: $text-color;
+  border-radius: $border-radius;
+  border: 2px solid $brand-light;
+  user-select: none;
+  transition: all $transition-time;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: $link-color;
+    background-color: $link-color;
+  }
+
+  &:active {
+    color: inherit;
+    border-color: $brand-light;
+    background-color: $brand-light;
+  }
+
+  &.active {
+    color: $white;
+    border-color: $link-color;
+    background-color: $link-color;
+  }
 }

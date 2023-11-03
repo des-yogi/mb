@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="ru" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <title>Блог</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас отключен JavaScript. Приносим наши извинения, но это делает затруднительным использование данного сайта.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main-content">
+
+        @@include('blocks/top-heading/top-heading.html')
+
+        <div class="container  blog-card__wrapper">
+          <div class="row">
+
+            <div class="col-1-2-3">
+              @@include('blocks/blog-card/blog-card.html', {
+                "picture": "blog-img-1",
+                "title": "Культовые книги, которые стоит прочесть каждому",
+                "text": "Нет времени на чтение сложных книг, курсы психологии, а хочется, чтобы жизнь изменилась к лучшему «здесь и…"
+              })
+            </div>
+
+            <div class="col-1-2-3">
+              @@include('blocks/blog-card/blog-card.html', {
+                "picture": "blog-img-2",
+                "title": "5 причин пойти на курсы психологии",
+                "text": "«Что-то не так. Чего-то не хватает…» Часто именно с такого ощущения начинается интерес к психологии"
+              })
+            </div>
+
+            <div class="col-1-2-3">
+              @@include('blocks/blog-card/blog-card.html', {
+                "picture": "blog-img-3",
+                "title": "Что такое психосоматика: как с ней бороться?",
+                "text": "Психосоматика – это отдельная группа медицинских заболеваний, при которых на фоне частых стрессов или длительно..."
+              })
+            </div>
+
+            <div class="col-1-2-3">
+              @@include('blocks/blog-card/blog-card.html', {
+                "picture": "blog-img-1",
+                "title": "Культовые книги, которые стоит прочесть каждому",
+                "text": "Нет времени на чтение сложных книг, курсы психологии, а хочется, чтобы жизнь изменилась к лучшему «здесь и…"
+              })
+            </div>
+
+            <div class="col-1-2-3">
+              @@include('blocks/blog-card/blog-card.html', {
+                "picture": "blog-img-2",
+                "title": "5 причин пойти на курсы психологии",
+                "text": "«Что-то не так. Чего-то не хватает…» Часто именно с такого ощущения начинается интерес к психологии"
+              })
+            </div>
+
+          </div>
+
+          @@include('blocks/pagination/pagination.html')
+
+        </div>
+
+
+      </main>
+
+      <section class="container  indent-content">
+
+        <div class="row  indent-content__header">
+
+          <div class="indent-content__title-col">
+            <h2 class="indent-content__title  double-slash">Отзывы</h2>
+          </div>
+
+          <div class="indent-content__add-col">
+            <button class="btn  btn--small">
+              <span>Оставить отзыв</span>
+              <svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#chevron-right"></use></svg>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="row  indent-content__main">
+          <div class="indent-content__main-col">
+            <div class="row  review-card__wrapper">
+
+              <div class="col-1-2-3">
+                @@include('blocks/review-card/review-card.html', {
+                  "avatar": "user-avatar",
+                  "name": "Анна",
+                  "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+                })
+              </div>
+
+              <div class="col-1-2-3">
+                @@include('blocks/review-card/review-card.html', {
+                  "avatar": "user-avatar",
+                  "name": "Василиса",
+                  "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Рекомендую!'
+                })
+              </div>
+
+              <div class="col-1-2-3">
+                @@include('blocks/review-card/review-card.html', {
+                  "avatar": "user-avatar",
+                  "name": "Глафира",
+                  "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+                })
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

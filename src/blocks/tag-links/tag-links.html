@@ -1,14 +1,8 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
-@ @include('blocks/tag-links/tag-links.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
-<div class="tag-links">content</div>
-
+@ @include('blocks/tag-links/tag-links.html', {
+  "text": "Все категории",
+  "activeClass": "active"
+})
 -->
+
+<a href="#" class="tag-links @@activeClass">@@text</a>

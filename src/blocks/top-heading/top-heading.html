@@ -1,0 +1,35 @@
+<!--DEV
+@ @include('blocks/top-heading/top-heading.html')
+-->
+
+<div class="container  top-heading">
+  <div class="top-heading__inner">
+    <h1 class="double-slash  top-heading__title">Блог</h1>
+
+    <div class="top-heading__tags" role="navigation" aria-label="Теги тем блога">
+
+      <a class="tag-links  active">Все категории</a>
+
+      @@include('../../blocks/tag-links/tag-links.html', {
+        "text": "Интересно о психологии",
+        "activeClass": ""
+      })
+      @@include('../../blocks/tag-links/tag-links.html', {
+        "text": "Гештальт",
+        "activeClass": ""
+      })
+      @@include('../../blocks/tag-links/tag-links.html', {
+        "text": "Поиск себя",
+        "activeClass": ""
+      })
+      @@include('../../blocks/tag-links/tag-links.html', {
+        "text": "Отношения",
+        "activeClass": ""
+      })
+      @@include('../../blocks/tag-links/tag-links.html', {
+        "text": "Cемья и дети",
+        "activeClass": ""
+      })
+    </div>
+  </div>
+</div>

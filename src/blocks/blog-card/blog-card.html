@@ -1,14 +1,37 @@
 <!--DEV
-
-Для использования этого файла как шаблона:
-
-@ @include('blocks/blog-card/blog-card.html')
-
-(Нужно убрать пробел между символами @)
-Подробнее: https://www.npmjs.com/package/gulp-file-include
-
-
-
-<div class="blog-card">content</div>
-
+@ @include('blocks/blog-card/blog-card.html', {
+  "picture": "blog-img-1",
+  "title": "Культовые книги, которые стоит прочесть каждому",
+  "text": "Нет времени на чтение сложных книг, курсы психологии, а хочется, чтобы жизнь изменилась к лучшему «здесь и…"
+})
 -->
+
+<article class="blog-card">
+  <a href="#" class="blog-card__inner">
+    <div class="embed-responsive embed-responsive--4-3  blog-card__img">
+      <picture>
+        <source srcset="img/@@picture.webp" media="(min-width: 1280px)" type="image/webp">
+        <source srcset="img/@@picture.jpg" media="(min-width: 1280px)">
+          <!-- 336x252 -->
+        <source srcset="img/@@picture.webp" media="(min-width: 768px)" type="image/webp">
+        <source srcset="img/@@picture.jpg" media="(min-width: 768px)">
+          <!-- 540x405 -->
+        <source srcset="img/@@picture.webp" media="(min-width: 480px)" type="image/webp">
+        <source srcset="img/@@picture.jpg" media="(min-width: 480px)">
+          <!-- 695x521 -->
+        <source srcset="img/@@picture.webp" media="(min-width: 360px)" type="image/webp">
+        <source srcset="img/@@picture.jpg" media="(min-width: 360px)">
+          <!-- 408x306 -->
+        <img src="img/@@picture.jpg" width="673" height="473" alt="Alt text" loading="lazy">
+      </picture>
+    </div>
+
+    <div class="blog-card__text">
+      <p>
+        <time class="publishedon" datetime="2023-07-24"><span>24.07.2023</span></time>
+      </p>
+      <h2 class="blog-card__title">@@title</h2>
+      <p class="blog-card__descr">@@text</p>
+    </div>
+  </a>
+</article>
