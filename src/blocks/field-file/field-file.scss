@@ -3,7 +3,7 @@
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 
   &__name {
     @include field-name;
@@ -13,6 +13,14 @@
     display: block;
     position: relative;
     pointer-events: none;
+    border: 1px solid $brand-light;
+    border-bottom-color: transparent;
+    border-radius: $border-radius;
+    //overflow: hidden;
+
+    @media (min-width: $screen-md) {
+      border-bottom-color: $brand-light;
+    }
   }
 
   &__input {
@@ -27,9 +35,10 @@
 
       &::before {
         @include field-focus;
-        color: $link-color--hover;
-        border-color: $link-color--hover;
-        background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$main-color);
+        color: $text-color;
+        border-color: $brand-light;
+        background-color: $white;
+        background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$text-color);
         //background-color: darken($gray-lightest, 10%); // как у обычных кнопок
       }
     }
@@ -38,60 +47,79 @@
   &__name-text {
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: baseline;
+    flex-direction: column-reverse;
+    align-items: center;
     width: 100%;
     padding: 0;
-    font-size: 16px;
-    background-color: $white;
+    font-size: $font-size;
+    //background-color: $white;
     border-radius: 0;
     white-space: nowrap;
     //overflow: hidden;
     text-overflow: ellipsis;
 
+    @media (min-width: $screen-md) {
+      flex-direction: row-reverse;
+    }
+
     &::before {
+      box-sizing: border-box;
       content: attr(data-button-text);
       display: block;
       width: 100%;
       margin-right: 0;
-      padding: $field-padding-vertical $field-padding-horizontal;
+      padding: 10px $field-padding-horizontal;
       padding-right: 60px;
       line-height: $line-height;
-      color: $main-color;
-      //background-color: $white;
+      color: $white;
+      background-color: $link-color;
       background-repeat: no-repeat;
-      background-position: right 12px center;
+      background-position: right 22px center;
       background-size: 24px;
-      background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$link-color);
-      border: 1px solid $border-color;
+      background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$white);
+      border: 2px solid $link-color;
       border-radius: $border-radius;
       transition: all $transition-time;
       cursor: pointer;
       pointer-events: auto;
+
+      @media (min-width: $screen-md) {
+        max-width: 220px;
+      }
     }
 
     &:hover,
     &:focus {
-      //@include field-focus;
 
       &::before {
-        color: $link-color--hover;
-        border-color: $link-color--hover;
-        background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$link-color--hover);
-        //background-color: darken($gray-lightest, 10%); // как у обычных кнопок
+        color: $text-color !important;
+        border-color: $link-color;
+        background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$text-color);
+        background-color: $white; // как у обычных кнопок
       }
     }
+
+    // &:active {
+
+    //   &::before {
+    //     color: $text-color !important;
+    //     border-color: $brand-light !important;
+    //     background-color: $brand-light;
+    //     background-image: svg-load('../blocks/field-file/bg-img/upload-simple.svg', fill=$text-color) !important;
+    //   }
+    // }
 
     span {
       display: block;
       width: 100%;
-      padding: 8px 16px 8px 16px;
-      font-size: $font-size-sm;
+      padding: $field-padding-vertical $field-padding-horizontal;
+      font-size: $font-size;
       color: $text-muted;
     }
   }
 
   &__file-name {
+    flex: 1 1 auto;
     font-weight: 500 !important;
     color: $title-color !important;
   }

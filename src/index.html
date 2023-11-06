@@ -30,7 +30,7 @@
             </div>
 
             <div class="indent-content__add-col">
-              <a href="#" class="btn">Все записи блога</a>
+              <a href="blog.html" class="btn">Все записи блога</a>
             </div>
 
           </div>
@@ -70,9 +70,9 @@
             </div>
 
             <div class="indent-content__add-col">
-              <button class="btn  btn--small">
+              <button class="btn  btn--small" data-bs-toggle="modal" data-bs-target="#siteModal" data-bs-whatever="отзыв">
                 <span>Оставить отзыв</span>
-                <svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#chevron-right"></use></svg>
+                <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#chevron-right"></use></svg>
               </button>
             </div>
 
@@ -122,7 +122,35 @@
 
   </div>
 
+  @@include('blocks/modal/modal.html', {
+    "caption": "Написать отзыв"
+  })
+
+
   @@include('_include/page_bottom.html')
+
+  <script>
+    (function(){
+      const siteModal = document.getElementById('siteModal');
+      if (siteModal) {
+        siteModal.addEventListener('show.bs.modal', event => {
+          // Button that triggered the modal
+          const button = event.relatedTarget;
+          // Extract info from data-bs-* attributes
+          const recipient = button.getAttribute('data-bs-whatever');
+          // If necessary, you could initiate an Ajax request here
+          // and then do the updating in a callback.
+
+          // Update the modal's content.
+          const modalTitle = siteModal.querySelector('.modal__title');
+          //const modalBodyInput = siteModal.querySelector('.modal__body input');
+
+          modalTitle.textContent = `Написать ${recipient}`;
+          //modalBodyInput.value = recipient;
+        })
+      }
+    }());
+  </script>
 
 </body>
 </html>

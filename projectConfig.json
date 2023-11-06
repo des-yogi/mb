@@ -36,7 +36,10 @@
     "contacts": [],
     "error-404": [],
     "tag-links": [],
-    "top-heading": []
+    "top-heading": [],
+    "article": [],
+    "comment-card": [],
+    "modal": []
   },
   "addCssBefore": [
     "../../node_modules/bootstrap/scss/_functions",
