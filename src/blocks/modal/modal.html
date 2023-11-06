@@ -1,0 +1,72 @@
+<!--DEV
+@ @include('blocks/modal/modal.html', {
+  "caption": "Написать отзыв"
+})
+-->
+
+<div class="modal fade" id="siteModal" tabindex="-1" aria-labelledby="siteModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered  modal__dialog">
+    <div class="modal-content  modal__content">
+      <div class="modal__header">
+        <h4 class="modal__title" id="siteModalLabel">@@caption</h4>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#close"></use></svg>
+        </button>
+      </div>
+      <div class="modal__body">
+        <form class="modal__form" action="#" method="post" enctype="multipart/form-data">
+          <label class="field-text">
+            <span class="field-text__input-wrap">
+              <input class="field-text__input  field-text__input--required" type="text" name="name" value="" placeholder="Имя">
+              <span class="field-text__help-text  error" data-error="name">Ошибка</span>
+            </span>
+          </label>
+
+          <label class="field-text">
+            <span class="field-text__input-wrap">
+              <input class="field-text__input  field-text__input--required" type="text" name="surname" value="" placeholder="Фамилия">
+              <span class="field-text__help-text  error" data-error="surname"></span>
+            </span>
+          </label>
+
+          <label class="field-text">
+            <span class="field-text__input-wrap">
+              <textarea class="field-text__input  field-text__input--required" name="message" rows="5" placeholder="Сообщение"></textarea>
+              <span class="field-text__help-text  error" data-error="message"></span>
+            </span>
+          </label>
+
+          <div class="field-file">
+            <!-- <div class="field-file__name">Выбор файлов</div> -->
+            <label class="field-file__input-wrap">
+              <input class="field-file__input" type="file" data-multiple-caption="файлов выбрано: { count }">
+              <span class="field-file__name-text" data-button-text="Выбрать файл">
+                <span>Файл не выбран</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="modal__agreement">
+
+            <div class="field-checkbox">
+              <label class="field-checkbox__name">
+                <input class="field-checkbox__input" type="checkbox" name="agreement" value="" checked>
+                <span class="field-checkbox__name-text">Я согласен(-на) на обработку персональных данных в соответствии с <a href="#">Политикой конфиденциальности</a></span>
+              </label>
+            </div>
+
+            <div class="modal__btn-wrapper">
+              <div class="modal__recaptcha">
+                <img src="img/recaptcha.gif" alt="">
+              </div>
+              <button type="submit" class="btn  modal__submit">Оставить отзыв</button>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>

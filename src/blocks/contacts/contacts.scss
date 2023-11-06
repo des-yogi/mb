@@ -1,9 +1,117 @@
-// В этом файле должны быть стили для БЭМ-блока contacts, его элементов, 
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .contacts {
+  padding-bottom: 70px;
 
   $block-name:                &; // #{$block-name}__element
 
+  &__inner {
+    gap: 48px 0;
+    padding-top: 48px;
+
+    @media (min-width: $screen-md) {
+      padding-top: 70px;
+    }
+  }
+
+  &__text-col {
+    @include col(xs, 12);
+    @include col(md, 8);
+    @include col(xl, 5);
+  }
+
+  &__map-col {
+    @include col(xs, 12);
+    @include col(xl, 7);
+  }
+
+  &__text {
+
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 24px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    span {
+      white-space: nowrap;
+
+      &:first-child {
+        color: $main-color;
+      }
+    }
+  }
+
+  &__list {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__list-item {
+    padding-left: 32px;
+
+    & + & {
+      margin-top: 24px;
+    }
+
+    .social-links__list {
+      justify-content: initial;
+    }
+
+    span {
+      display: block;
+      position: relative;
+      margin-bottom: 8px;
+      font-weight: 700;
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        left: -32px;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-size: 24px;
+        background-position: center;
+      }
+    }
+
+    &--address span::before {
+      background-image: svg-load('../blocks/sprite-svg/svg/marker.svg', fill=$main-color);
+    }
+
+    &--tel span::before {
+      background-image: svg-load('../blocks/sprite-svg/svg/phone.svg', fill=$main-color);
+    }
+
+    &--mail span::before {
+      background-image: svg-load('../blocks/sprite-svg/svg/email.svg', fill=$main-color);
+    }
+
+    &--globe span::before {
+      background-image: svg-load('../blocks/sprite-svg/svg/globe.svg', fill=$main-color);
+    }
+  }
+
+  &__list-descr {
+    margin: 0;
+  }
+
+  &__list-link {
+    color: inherit;
+  }
+
+  &__map {
+    height: 400px;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    @media (min-width: $screen-xl) {
+      height: 100%;
+    }
+  }
 }

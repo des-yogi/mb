@@ -3,7 +3,7 @@
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 
   &__name {
     @include field-name;
@@ -17,12 +17,13 @@
     display: inline-block;
     vertical-align: middle;
     width: 100%;
-    // height: 2.125em;
+    min-height: 48px;
     padding: $field-padding-vertical  $field-padding-horizontal;
     margin: 0;
     line-height: $line-height;
-    font-size: 1em;
+    font-size: 16px;
     font-family: inherit;
+    color: $text-muted;
     background-color: #fff;
     border: 1px solid $border-color;
     border-radius: $border-radius;
@@ -64,6 +65,14 @@
       height: auto;
       min-height: calc(#{$textarea-height} + 2px);
       resize: vertical;
+    }
+
+    &--required {
+      padding-right: 40px;
+      background-repeat: no-repeat;
+      background-size: 8px;
+      background-position: top 20px right 20px;
+      background-image: svg-load('../blocks/sprite-svg/svg/asterisk.svg', fill=$main-color);
     }
   }
 

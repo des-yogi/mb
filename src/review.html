@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js  page" lang="ru" prefix="og: https://ogp.me/ns#">
+
+<head>
+  <meta charset="utf-8">
+  <title>Отзывы</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+<noscript>У вас отключен JavaScript. Приносим наши извинения, но это делает затруднительным использование данного сайта.</noscript>
+
+  <div class="page__inner">
+
+    <div class="page__content">
+      @@include('blocks/page-header/page-header.html')
+
+      <main class="main-content">
+
+        <div class="container  top-heading">
+          <div class="top-heading__inner">
+            <h1 class="double-slash  top-heading__title" style="margin-bottom:0;">Отзывы</h1>
+          </div>
+        </div>
+
+        <div class="container  blog-card__wrapper  review-card__wrapper">
+          <div class="row">
+
+            <div class="col-1-2-3">
+              @@include('blocks/review-card/review-card.html', {
+                "avatar": "user-avatar",
+                "name": "Анна",
+                "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+              })
+            </div>
+
+            <div class="col-1-2-3">
+              @@include('blocks/review-card/review-card.html', {
+                "avatar": "user-avatar",
+                "name": "Василиса",
+                "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Рекомендую!'
+              })
+            </div>
+
+            <div class="col-1-2-3">
+              @@include('blocks/review-card/review-card.html', {
+                "avatar": "user-avatar",
+                "name": "Глафира",
+                "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+              })
+            </div>
+
+            <div class="col-1-2-3">
+              @@include('blocks/review-card/review-card.html', {
+                "avatar": "user-avatar",
+                "name": "Анна",
+                "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+              })
+            </div>
+
+            <div class="col-1-2-3">
+              @@include('blocks/review-card/review-card.html', {
+                "avatar": "user-avatar",
+                "name": "Василиса",
+                "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Рекомендую!'
+              })
+            </div>
+
+            <div class="col-1-2-3">
+              @@include('blocks/review-card/review-card.html', {
+                "avatar": "user-avatar",
+                "name": "Глафира",
+                "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+              })
+            </div>
+
+          </div>
+
+          <div class="review-card__pagination-wrapper">
+
+            <div class="btn__wrapper">
+              <button class="btn  btn--small" data-bs-toggle="modal" data-bs-target="#siteModal" data-bs-whatever="отзыв">
+                <span>Оставить отзыв</span>
+                <svg width="24" height="24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#chevron-right"></use></svg>
+              </button>
+            </div>
+
+            @@include('blocks/pagination/pagination.html')
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+    <div class="page__footer-wrapper">
+      @@include('blocks/page-footer/page-footer.html')
+    </div>
+
+  </div>
+
+  @@include('blocks/modal/modal.html', {
+    "caption": "Написать отзыв"
+  })
+
+  @@include('_include/page_bottom.html')
+
+  <script>
+    (function(){
+      const siteModal = document.getElementById('siteModal');
+      if (siteModal) {
+        siteModal.addEventListener('show.bs.modal', event => {
+          // Button that triggered the modal
+          const button = event.relatedTarget;
+          // Extract info from data-bs-* attributes
+          const recipient = button.getAttribute('data-bs-whatever');
+          // If necessary, you could initiate an Ajax request here
+          // and then do the updating in a callback.
+
+          // Update the modal's content.
+          const modalTitle = siteModal.querySelector('.modal__title');
+          //const modalBodyInput = siteModal.querySelector('.modal__body input');
+
+          modalTitle.textContent = `Написать ${recipient}`;
+          //modalBodyInput.value = recipient;
+        })
+      }
+    }());
+  </script>
+
+</body>
+</html>

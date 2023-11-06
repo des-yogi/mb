@@ -1,0 +1,57 @@
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 24px;
+  background-color: $block-bg;
+  border-radius: $border-radius;
+  gap: 24px;
+
+  @media (min-width: $screen-md) {
+    flex-direction: initial;
+    gap: 0 70px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__wrapper {
+
+    & > * + * {
+      margin-top: 24px;
+    }
+  }
+
+  &__img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    @media (max-width: $screen-md - 1) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: $screen-md) {
+      flex: 0 0 120px;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
+
+    @media (max-width: $screen-md - 1) {
+      text-align: center;
+    }
+
+    @media (min-width: $screen-md) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__title {
+    margin: 0 0 24px;
+  }
+}

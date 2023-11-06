@@ -1,0 +1,72 @@
+.modal {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__dialog {
+
+    @media (min-width: $screen-md) {
+      max-width: 580px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    .close {
+      flex: 0 0 48px;
+    }
+  }
+
+  &__content {
+    padding: 24px 16px;
+    border-radius: $border-radius;
+
+    @media (min-width: $screen-md) {
+      padding: 32px 24px 48px;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    margin: 0;
+  }
+
+  &__body {
+    padding-top: 32px;
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    //padding-top: 32px;
+
+    @media (min-width: $screen-md) {
+      flex-direction: initial;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__recaptcha {
+    flex: 1 1 100%;
+
+    @media (min-width: $screen-md) {
+      flex: 0 0 304px;
+    }
+  }
+
+  &__submit {
+    flex: 1 1 100%;
+    font-size: $font-size;
+    text-transform: none;
+    letter-spacing: normal;
+
+    @media (min-width: $screen-md) {
+      flex: 0 0 180px;
+    }
+  }
+}

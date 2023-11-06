@@ -1,0 +1,23 @@
+<!--DEV
+@ @include('blocks/comment-card/comment-card.html', {
+  "avatar": "user-avatar",
+  "name": "Анна",
+  "text": 'Я очень благодарна Марине за терпение, поддержку и профессионализм! Со мной случалось много ситуаций, заново вводивших меня в депрессивное состояние, но Марина помогла мне всё побороть и двигаться дальше. Рекомендую!'
+})
+-->
+
+<article class="comment-card">
+  <div class="embed-responsive embed-responsive--1-1  comment-card__img">
+    <picture>
+      <source srcset="img/@@avatar.webp" type="image/webp">
+      <img src="img/@@avatar.jpg" alt="Avatar name" width="120" height="120" loading="lazy">
+    </picture>
+  </div>
+
+  <div class="comment-card__text">
+    <h3 class="h4  comment-card__title">@@name</h3>
+    <div class="comment-card__descr">
+      <p>@@text</p>
+    </div>
+  </div>
+</article>
