@@ -1,16 +1,28 @@
 .review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   height: 100%;
-  padding: 48px 24px;
+  padding: 24px;
   background-color: $block-bg;
   border-radius: $border-radius;
+
+  @media (min-width: $screen-md) {
+    flex-direction: initial;
+    gap: 0 70px;
+    padding: 24px 48px;
+  }
 
   $block-name:                &; // #{$block-name}__element
 
   &__wrapper {
+    display: flex;
+    flex-direction: column;
     gap: 24px 0;
   }
 
   &__img {
+    flex: 0 0 120px;
     width: 120px;
     height: 120px;
     margin: 0 auto;
@@ -26,11 +38,16 @@
   }
 
   &__text {
+    flex: 1 1;
     text-align: center;
+
+    @media (min-width: $screen-md) {
+      text-align: initial;
+    }
   }
 
   &__title {
-    margin: 24px 0;
+    margin: 0 0 20px;
   }
 
   &__pagination-wrapper {
