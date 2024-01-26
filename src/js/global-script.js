@@ -57,7 +57,6 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');
 //   // code
 // });
 
-// Изоляция без jQuery
 // (function(){
 //   // code
 // }());

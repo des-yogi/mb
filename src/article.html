@@ -163,12 +163,12 @@
                 <h2 class="indent-content__title  double-slash">Комментарии</h2>
               </div>
 
-              <div class="indent-content__add-col">
+              <!-- <div class="indent-content__add-col">
                 <button class="btn  btn--small"  data-bs-toggle="modal" data-bs-target="#siteModal" data-bs-whatever="комментарий">
                   <span>Оставить комментарий</span>
                   <svg width="24" height="24" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite-svg.svg#chevron-right"></use></svg>
                 </button>
-              </div>
+              </div> -->
 
             </div>
 
@@ -195,6 +195,69 @@
                   })
 
                 </div>
+
+                <div class="comment-card__form-wrapper">
+
+                  <form class="form" action="#" method="post">
+                    <h4 class="comment-card__form-title">Оставьте свой комментарий</h4>
+
+                    <label class="field-text">
+                      <!-- <span class="field-text__name">Текст</span> -->
+                      <span class="field-text__input-wrap">
+                        <input class="field-text__input  field-text__input--required" type="text" name="name" value="" placeholder="Имя">
+                        <span class="field-text__help-text"></span>
+                      </span>
+                    </label>
+
+                    <label class="field-text">
+                      <!-- <span class="field-text__name">Текст</span> -->
+                      <span class="field-text__input-wrap">
+                        <input class="field-text__input  field-text__input--required" type="email" name="email" value="" placeholder="Email">
+                        <span class="field-text__help-text"></span>
+                      </span>
+                    </label>
+
+                    <label class="field-text">
+                      <!-- <span class="field-text__name">Текст</span> -->
+                      <span class="field-text__input-wrap">
+                        <textarea class="field-text__input  field-text__input--required" name="message" rows="7" placeholder="Ваш комментарий"></textarea>
+                        <span class="field-text__help-text"></span>
+                      </span>
+                    </label>
+
+                    <div class="form-group">
+                      <label class="field-text  form-group__captcha">
+                        <span class="field-text__name  form-group__lbl">Enter the amount 7 + 9</span>
+                        <span class="field-text__input-wrap  form-group__input">
+                          <input class="field-text__input  field-text__input--required" type="text" inputmode="numeric" name="captcha" value="">
+                          <span class="field-text__help-text"></span>
+                        </span>
+                      </label>
+
+                      <div class="form-group__agreement">
+
+                        <div class="field-checkbox">
+                          <label class="field-checkbox__name">
+                            <input class="field-checkbox__input" type="checkbox" name="agreement" value="" checked>
+                            <span class="field-checkbox__name-text">Я согласен(-на) на обработку персональных данных в соответствии с <a href="#">Политикой конфиденциальности</a></span>
+                          </label>
+                        </div>
+
+                        <div class="form-actions">
+                          <button class="btn  btn--small" value="">
+                            <span>Предпросмотр</span>
+                          </button>
+                          <button class="btn  btn--small  form__submit" type="submit" value="">
+                            <span>Отправить</span>
+                          </button>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+
               </div>
             </div>
 
